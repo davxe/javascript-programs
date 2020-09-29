@@ -1,0 +1,48 @@
+
+<html>
+    <head>
+        <title>Guess Game</title>
+    </head>
+    <body>
+        <script>
+            /*camel case=toName(c style)
+              snake case=to_name(python)
+              cabab case=guess-game(file-name) 
+              pascal case=ToName(classes)
+            */
+            const name=prompt("Enter your name")
+            console.log("welcome to guess "+name)
+            const targetNumber=Math.round(Math.random()*100)
+           // console.log(targetNumber)
+
+            const maxGuess=10
+            let playerGuessCount=0
+
+            while(playerGuessCount<maxGuess)
+            {
+                const guess=parseInt(prompt("guess my number"))
+                //console.log(guess)
+                if(guess < targetNumber)
+                {
+                    console.log("Oops. Your guess was LOW.")
+                }
+                else if(guess>targetNumber)
+                {
+                    console.log("Oops. Your guess was HIGH")
+                }
+                else if(guess==targetNumber)
+                {
+                    console.log("Good job, "+name+" You gussed my number in "+playerGuessCount+" guesses!.")
+                    break
+                }
+                
+                playerGuessCount+=1//uniary operator
+            }
+            if(playerGuessCount==maxGuess)
+                {
+                    console.log("Sorry. You didn't get my number. My number was "+targetNumber)
+                }
+        </script>
+
+    </body>
+</html>

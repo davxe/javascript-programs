@@ -1,0 +1,12 @@
+//if we declare the variable in function scope with same name of global scope then both n1 and n2 have different value 
+let n1=10,n2=20
+function add()
+{ 
+    console.log(n1,n2)
+    n1=100,n2=200
+    return n1+n2
+
+   
+}
+console.log(add(n1,n2))//300
+console.log(n1,n2)// 100 200
